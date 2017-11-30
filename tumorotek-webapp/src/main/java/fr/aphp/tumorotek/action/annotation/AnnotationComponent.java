@@ -141,7 +141,8 @@ public class AnnotationComponent extends GenericForwardComposer<Component> {
 	private String colClass = null;
  	
 	// composant groupe (table) auquel appartient le champ
-	private Group annoGroup;
+	
+	private Component tableComponent;
 	
 	// file edit composants
 	private Textbox fileNameBox;
@@ -224,8 +225,8 @@ public class AnnotationComponent extends GenericForwardComposer<Component> {
 		this.colClass = c;
 	}
 
-	public void setAnnoGroup(Group aG) {
-		this.annoGroup = aG;
+	public void setTableComponent(Component _t) {
+		this.tableComponent = _t;
 	}
 	
 	private boolean getIsObligatoire() {
@@ -1471,8 +1472,10 @@ public class AnnotationComponent extends GenericForwardComposer<Component> {
 				}
 			}
 		} catch (WrongValueException ve) {
-			annoGroup.setOpen(true);
-			Clients.scrollIntoView(annoGroup); 
+			if (tableComponent instanceof Group) {
+				((Group) tableComponent).setOpen(true);
+			}
+			Clients.scrollIntoView(tableComponent); 
 			throw ve;
 		}
 	}
@@ -1497,7 +1500,7 @@ public class AnnotationComponent extends GenericForwardComposer<Component> {
 				return getFicheAnnotation().getBankUsedToDrawChamps();
 			}
 		} else {
-			return (Banque) annoGroup.getAttribute("bank");
+			return (Banque) tableComponent.getAttribute("bank");
 		}
 	}
 	
@@ -2772,8 +2775,10 @@ public class AnnotationComponent extends GenericForwardComposer<Component> {
 			
 			
 		} catch (WrongValueException ve) {
-			annoGroup.setOpen(true);
-			Clients.scrollIntoView(annoGroup); 
+			if (tableComponent instanceof Group) {
+				((Group) tableComponent).setOpen(true);
+			}
+			Clients.scrollIntoView(tableComponent); 
 			throw ve;
 		}
 	}

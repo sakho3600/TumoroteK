@@ -84,7 +84,7 @@ public class FicheAnnotation extends AbstractFicheController {
 	private static final long serialVersionUID = 1L;
 
 	// Static Components
-	private Panel annoPanel;
+	protected Panel annoPanel;
 	private Rows annoRows;
 	
 	private Button edit;
@@ -95,27 +95,27 @@ public class FicheAnnotation extends AbstractFicheController {
 	private boolean canEdit;
 	
 	// Objets Principaux
-	private TKAnnotableObject obj = null;
-	private Entite entite;
+	protected TKAnnotableObject obj = null;
+	protected Entite entite;
 	private Banque bankUsedToDrawChamps = null;
 
-	private List<AnnotationComponent> champControllers = 
+	protected List<AnnotationComponent> champControllers = 
 										new ArrayList<AnnotationComponent>();
-	private List<TableAnnotation> tables = new ArrayList<TableAnnotation>();
-	private List<AnnotationValeur> valeursToCreateOrUpdate = 
+	protected List<TableAnnotation> tables = new ArrayList<TableAnnotation>();
+	protected List<AnnotationValeur> valeursToCreateOrUpdate = 
 											new ArrayList<AnnotationValeur>();
-	private List<AnnotationValeur> valeursToDelete =
+	protected List<AnnotationValeur> valeursToDelete =
 											new ArrayList<AnnotationValeur>();
 	
 	// modification multiple
-	private List< ? extends TKAnnotableObject> multiObjs;
-	private Boolean isMultipleMode = false;
+	protected List< ? extends TKAnnotableObject> multiObjs;
+	protected Boolean isMultipleMode = false;
 	
-	private int tableNum = 0;
+	protected int tableNum = 0;
 	
 	private List<Group> collapGroups = new ArrayList<Group>();
 	private List<Group> openedGroups = new ArrayList<Group>();
-	private boolean isStatic;
+	protected boolean isStatic;
 	private boolean showButtons;
 	
 	public void setObj(TKAnnotableObject o) {
@@ -352,7 +352,7 @@ public class FicheAnnotation extends AbstractFicheController {
 			.getAttributeOrFellow("annoDiv$composer", true)).setChamp(chp, multi);	
 		((AnnotationComponent) ua.getFellow("annoDiv")
 				.getAttributeOrFellow("annoDiv$composer", true))
-												.setAnnoGroup(annoGroup);
+												.setTableComponent(annoGroup);
 		((AnnotationComponent) ua.getFellow("annoDiv")
 				.getAttributeOrFellow("annoDiv$composer", true))
 													.setColClass(colClass);

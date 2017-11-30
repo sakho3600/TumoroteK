@@ -197,7 +197,8 @@ public class PrelevementController extends AbstractObjectTabController {
 	
 	@Override
 	public void populateFicheStatic() {
-		setStaticZulPath("/zuls/prelevement/FichePrelevementStatic.zul");
+		// setStaticZulPath("/zuls/prelevement/FichePrelevementStatic.zul");
+		setStaticZulPath("/zuls/prelevement/tissuBanque/FichePrelevementStaticTissu.zul");
 		if (SessionUtils.isSeroContexte(sessionScope)) {
 			setStaticZulPath("/zuls/prelevement/serotk/"
 						+ "FichePrelevementStaticSero.zul");
