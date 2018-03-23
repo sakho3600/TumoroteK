@@ -71,6 +71,7 @@ sous Unix, dans la variable `CATALINA_OPTS`, par l'intermédiaire du script de d
         mysql -u tumo -p tumorotek --default-character-set=utf8 < tumorotek\charts.sql
         mysql -u tumo -p tumorotek --default-character-set=utf8 < tumorotek\getBoite.sql
         mysql -u tumo -p tumorotek --default-character-set=utf8 < tumorotek\indicateurs.sql
+        mysql -u tumo -p tumorotek --default-character-set=utf8 < tumorotek\createSTATStables.sql
     
         -- Si vous voulez le contexte de banque de tissus osseux :
         mysql -u tumo -p tumorotek --default-character-set=utf8 < tumorotek\add-bto-context.sql

@@ -26,7 +26,6 @@
         <module>tumorotek-core</module>
         <module>tumorotek-interface</module>
         <module>tumorotek-webapp</module>
-        <module>tumorotek-rest</module>
         <module>tumorotek-install</module>
     </modules>
 

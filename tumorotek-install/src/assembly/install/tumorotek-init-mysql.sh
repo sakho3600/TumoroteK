@@ -83,6 +83,8 @@ if ! mysql -u $user_mysql -p$password_mysql -e "use $tumorotek"; then
     mysql -u $user_mysql -p$password_mysql $tumorotek --default-character-set=utf8 < tumorotek/getBoite.sql
     echo mysql -u $user_mysql -p$password_mysql $tumorotek --default-character-set=utf8 \< tumorotek/indicateurs.sql
     mysql -u $user_mysql -p$password_mysql $tumorotek --default-character-set=utf8 < tumorotek/indicateurs.sql
+    echo mysql -u $user_mysql -p$password_mysql $tumorotek --default-character-set=utf8 \< tumorotek/createSTATStables.sql
+    mysql -u $user_mysql -p$password_mysql $tumorotek --default-character-set=utf8 < tumorotek/createSTATStables.sql
     echo mysql -u $user_mysql -p$password_mysql $tumorotek --default-character-set=utf8 \< tumorotek/add-bto-context.sql
     mysql -u $user_mysql -p$password_mysql $tumorotek --default-character-set=utf8 < tumorotek/add-bto-context.sql
 else
